@@ -8,7 +8,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   const [currentCartValue, setCurrentCartValue] = useState(3);
   const [savedCartValue, setSavedCartValue] = useState([]);
-  const [activeImageIndex, setActiveImageIndex] = useState(0)
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const [imageArr, setImageArr] = useState([
     {
@@ -47,26 +47,77 @@ export default function Home() {
               <ProductShowcase />
             </div>
             <div className=" d-md-block d-lg-none">
-
-              <div id="carouselExampleFade" className="carousel slide" data-bs-ride="carousel">
+              <div
+                id="carouselExampleFade"
+                className="carousel slide"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner">
                   {imageArr.map((item, index) => (
-                    <div className={`carousel-item ${activeImageIndex === index ? "active" : "null"}`} key={index}>
-                      <img src={item.img} className="d-block w-100" alt="..." />
+                    <div
+                      className={`carousel-item ${
+                        activeImageIndex === index ? "active" : "null"
+                      }`}
+                      key={index}
+                    >
+                      <Image
+                        layout="responsive"
+                        src={item.img}
+                        className="d-block w-100"
+                        alt="..."
+                      />
                     </div>
-
                   ))}
-
                 </div>
-                <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                  <span className="px-4 py-3 rounded-circle bg-f7f8fd text-center" aria-hidden="true">
-                    <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd" /></svg>
+                <button
+                  className="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExampleFade"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    className="px-4 py-3 rounded-circle bg-f7f8fd text-center"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      width="12"
+                      height="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11 1 3 9l8 8"
+                        stroke="#1D2026"
+                        strokeWidth="3"
+                        fill="none"
+                        fillRule="evenodd"
+                      />
+                    </svg>
                   </span>
                   <span className="visually-hidden">Previous</span>
                 </button>
-                <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                  <span className="px-4 py-3 rounded-circle bg-f7f8fd text-center" aria-hidden="true">
-                    <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd" /></svg>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExampleFade"
+                  data-bs-slide="next"
+                >
+                  <span
+                    className="px-4 py-3 rounded-circle bg-f7f8fd text-center"
+                    aria-hidden="true"
+                  >
+                    <svg
+                      width="13"
+                      height="18"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="m2 1 8 8-8 8"
+                        stroke="#1D2026"
+                        strokeWidth="3"
+                        fill="none"
+                        fillRule="evenodd"
+                      />
+                    </svg>
                   </span>
                   <span className="visually-hidden">Next</span>
                 </button>
